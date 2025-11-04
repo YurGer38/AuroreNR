@@ -49,7 +49,7 @@ void SimulationWindow::setupUi()
     rootV->addLayout(interfaceLayout);
 
 
-    QLabel *rhoLabel = new QLabel("ρ_air (10⁻⁶ Å⁻²):");
+    QLabel *rhoLabel = new QLabel("<b>ρ<sub>air</sub></b> (10⁻⁶ Å⁻²):");
     QLineEdit *rhoEdit = new QLineEdit("0.0"); // default SLD of air
     rhoEdit->setFixedWidth(80);
 
@@ -171,9 +171,9 @@ void SimulationWindow::setupUi()
     connect(btnSLD,  &QPushButton::clicked, this, &SimulationWindow::onToggleSLD);
     connect(btnBack, &QPushButton::clicked, this, &SimulationWindow::onBackToMain);
     connect(interfaceCombo, &QComboBox::currentTextChanged, this, [rhoLabel](const QString &text){
-        if (text.contains("Air")) rhoLabel->setText("ρ_air (10⁻⁶ Å⁻²):");
-        else if (text.contains("Solid")) rhoLabel->setText("ρ_solid (10⁻⁶ Å⁻²):");
-        else if (text.contains("Liquid")) rhoLabel->setText("ρ_liquid (10⁻⁶ Å⁻²):");
+        if (text.contains("Air")) rhoLabel->setText("<b>ρ<sub>air</sub></b> (10⁻⁶ Å⁻²):");
+        else if (text.contains("Solid")) rhoLabel->setText("<b>ρ<sub>solid</sub></b> (10⁻⁶ Å⁻²):");
+        else if (text.contains("Liquid")) rhoLabel->setText("<b>ρ<sub>liquid</sub></b> (10⁻⁶ Å⁻²):");
     });
 
 }
